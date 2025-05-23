@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+    --color-custom-red: hsl(14, 86%, 42%);
+    --color-custom-green: hsl(159, 69%, 38%);
+    --color-custom-rose50: hsl(20, 50%, 98%);
+    --color-custom-rose100: hsl(13, 31%, 94%);
+    --color-custom-rose300: hsl(14, 25%, 72%);
+    --color-custom-rose400: hsl(7, 20%, 60%);
+    --color-custom-rose500: hsl(12, 20%, 44%);
+    --color-custom-rose900: hsl(14, 65%, 9%);
+
+    --font-primary: "Red Hat Text", "sans-serif";
+}
