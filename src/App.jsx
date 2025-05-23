@@ -14,16 +14,19 @@ function App() {
 console.log(products)
   return (
     <main className='bg-custom-rose50 min-h-screen font-primary'>
-      <div className='grid grid-cols-3 gap-10 p-20' >
+      <div className='grid grid-cols-1 place-items-center lg:grid-cols-3 lg:place-items-start gap-10 p-20' >
         <section className='col-span-2'>
           <h1 className='text-5xl pb-8 font-bold text-custom-rose900'>Desserts</h1>
-          <div className='grid grid-cols-3 gap-8'>
+          <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
             {
               products.map(p => (
-                <div className='relative'>
-                  <img src={p.image.desktop} className='rounded-lg' />
-                  <button className='flex items-center justify-center border-custom-rose400 rounded-full border-[1px] py-3 px-6 min-w-1/2 text-custom-rose900 bg-white font-semibold text-sm absolute left-1/4 transform -translate-x-1/8 -translate-y-1/2'>
-                  <img src="../assets/images/icon-add-to-cart.svg" className='pr-2' alt="" />
+                <div className='relative py-4'>
+                  <picture>
+                    <source srcSet={p.image.mobile} media="(max-width: 639px)" />
+                    <img src={p.image.desktop} alt="Product" className='rounded-lg' />
+                </picture>
+                  <button className='flex justify-center items-center border-custom-rose400 rounded-full border-[1px] w-[70%] py-2 lg:py-1 xl:py-3 min-w-1/2 text-custom-rose900 bg-white font-semibold text-sm absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+                  <img src="../assets/images/icon-add-to-cart.svg" className='pr-2 lg:size-6 xl:size-max' alt="" />
                     Add to Cart</button>
                   <p className='text-custom-rose400 text-sm mt-10'>{p.category}</p>
                   <h3 className='text-custom-rose900 font-semibold'>{p.name}</h3>
