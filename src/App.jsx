@@ -111,7 +111,7 @@ function App() {
           </div>
         </section>
         <section className='bg-white h-fit rounded-lg px-4 place-self-stretch'>
-          <Cart cartItems = {cartItems} total={total}/>
+          <Cart cartItems = {cartItems} total={total} setCartItems = {setCartItems} products={products} setProducts={setProducts}/>
         </section> 
       </div>
       

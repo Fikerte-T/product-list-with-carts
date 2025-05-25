@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Modal from './Modal'
-const Cart = ({cartItems, total}) => {
+const Cart = ({cartItems, total, setCartItems, products, setProducts}) => {
 //   const [open, setOpen] = useState(false)
-
+    const removeItem = (id) => {
+        setProducts(prev => prev.map(prod => prod.id === id ? {...prod, isSelected: false} : prod))
+        setCartItems(prev => prev.filter(item => item.id !== id))
+    }
   return (
     
     <div className='p-4'>  
@@ -21,7 +24,10 @@ const Cart = ({cartItems, total}) => {
                             <p className='text-custom-rose400'>{`$${item.price * item.prodAmount}`}</p>
                         </div>
                     </div>
-                    <img src="../assets/images/icon-remove-item.svg" alt="remove icon" className='border-1 border-custom-rose300 rounded-full p-0.5'/>
+                    <button onClick={() => removeItem(item.id)}>
+                      <img src="../assets/images/icon-remove-item.svg" alt="remove icon" className='border-1 border-custom-rose300 rounded-full p-0.5'/>
+
+                    </button>
                 </div>
             ))
             }
