@@ -1,24 +1,20 @@
 
 import './App.css'
 import {useEffect, useState} from 'react'
-
+import Cart from './Cart'
 
 function App() {
   const [products, setProducts] = useState([])
-  const [cartCount, setCartCount] = useState(0)
   const [cartItems, setCartItems] = useState([])
   const [total, setTotal] = useState(0)
-  // const [clickedIndex, setClickedIndex] = useState(null)
-
+  
   const handleToggle = (clickedProd) => {
     setProducts(prevProducts => {
       const updatedProducts =  prevProducts.map((prod) => prod.id === clickedProd.id ? {...prod, isSelected: true, prodAmount: 1} : prod)  
       const updatedProduct = updatedProducts.find(p => p.id === clickedProd.id);
-      displayCart(updatedProduct); // Call with updated product
+      displayCart(updatedProduct)
       return updatedProducts;  
     })
-    // calculateTotal()
-
   }
 
   const displayCart = (selectedProd) => {
@@ -27,16 +23,10 @@ function App() {
 
     } 
     else {
-      // const l = cartItems.find(p => p.name === selectedProd.name)
       if(cartItems.find(p => p.id === selectedProd.id) === undefined) {
-        // setCartItems(prevCartItems => [...prevCartItems, selectedProd])
-      setCartItems([...cartItems, selectedProd])
-
+        setCartItems([...cartItems, selectedProd])
       }  
-
-      // console.log(l)
     }
-    
   }
   
   const calculateTotal = () => {
@@ -58,10 +48,6 @@ function App() {
     updatedProducts.map(p => p.id === id ? p.prodAmount = p.prodAmount + 1: p.prodAmount)
     setProducts(updatedProducts)
     calculateTotal()
-  }
-
-  const confirmOrder = () => {
-    
   }
   
   useEffect(() => {
@@ -125,46 +111,10 @@ function App() {
           </div>
         </section>
         <section className='bg-white h-fit rounded-lg px-4 place-self-stretch'>
-          <div className='p-4'>  
-            <h2 className='text-3xl font-bold text-custom-red'>{`Your cart (${cartItems.length})`}</h2>
-            {cartItems.length ? 
-            (
-            <>
-              {
-                cartItems.map((item, index) => (
-                  <div key={index} className='flex items-center justify-between'>
-                    <div className='text-lg font-semibold p-4 w-full border-b-2 border-custom-rose100 space-y-2'>
-                      <p className='text-custom-rose900'>{item.name}</p>
-                      <div className='flex w-[150px] justify-between'>
-                        <p className='text-custom-red'>{`${item.prodAmount}x`}</p>
-                        <p className='text-custom-rose400 font-normal'>{`@ $${item.price}`}</p>
-                        <p className='text-custom-rose400'>{`$${item.price * item.prodAmount}`}</p>
-                      </div>
-                    </div>
-                    <img src="../assets/images/icon-remove-item.svg" alt="remove icon" className='border-1 border-custom-rose300 rounded-full p-0.5'/>
-                  </div>
-                ))
-              }
-              <div className='flex justify-between items-center py-8 px-4'>
-                <p className='text-custom-rose500 font-semibold text-lg'>Order Total</p>
-                <p className='text-custom-rose900 font-bold text-3xl'>{`$${total}`}</p>
-              </div>
-              <div className='flex justify-center bg-custom-rose100 p-4 rounded-lg'>
-                <img src="../assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
-                <p className='pl-2 text-custom-rose500'>This is a <span className='font-bold'>carbon neutral</span> delivery</p>
-              </div>
-              <button className='bg-custom-red text-custom-rose50 w-full p-4 my-8 rounded-4xl text-lg font-bold hover:bg-custom-red/80' onClick={() => confirmOrder()}>Confirm Order</button>
-            </>
-            ) : 
-            (
-              <>
-              <img src="../assets/images/illustration-empty-cart.svg" alt="empty cart illustation image" className='mx-auto my-6'/>
-              <p className='text-custom-rose500 font-semibold text-center'>Your added items will appear here</p>
-              </>
-            )}
-          </div>
+          <Cart cartItems = {cartItems} total={total}/>
         </section> 
       </div>
+      
     </main>
   )
 }
