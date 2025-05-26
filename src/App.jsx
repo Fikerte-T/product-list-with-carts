@@ -53,7 +53,7 @@ function App() {
   }, [cartItems])
   
   useEffect(() => {
-    fetch('../data.json')
+    fetch('./data.json')
     .then(res => res.json())
     .then(data => {
       const updatedData = data.map(prod => (
@@ -82,11 +82,11 @@ function App() {
 
                         <div className='flex justify-around items-center bg-custom-red border-custom-red rounded-full border-[1px] w-[70%] py-2 lg:py-1 xl:py-3 min-w-1/2 text-white font-semibold text-sm absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
                           <button className='border-1 rounded-full border-custom-rose50 px-1 py-2' onClick={() => handleDecrement(p.id)}>
-                            <img src='../assets/images/icon-decrement-quantity.svg' alt='decrement icon'/> 
+                            <img src='./assets/images/icon-decrement-quantity.svg' alt='decrement icon'/> 
                           </button>
                           <p>{p.prodAmount}</p>
                           <button className='border-1 rounded-full border-custom-rose50 p-1' onClick={() => handleIncrement(p.id)}>
-                            <img src='../assets/images/icon-increment-quantity.svg' alt='increment icon' /> 
+                            <img src='./assets/images/icon-increment-quantity.svg' alt='increment icon' /> 
                           </button>
                         </div>
                         : 
@@ -97,7 +97,7 @@ function App() {
                             className={`flex justify-center items-center border-custom-rose400 rounded-full border-[1px] w-[70%] py-2 lg:py-1 xl:py-3 min-w-1/2 text-custom-rose900 bg-white font-semibold text-sm absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:text-custom-rose50 hover:bg-custom-red
                               `}
                               >
-                            <img src="../assets/images/icon-add-to-cart.svg" className='pr-2 lg:size-6 xl:size-max' alt="" /> Add to Cart
+                            <img src="./assets/images/icon-add-to-cart.svg" className='pr-2 lg:size-6 xl:size-max' alt="" /> Add to Cart
                           </button>
                         </>
                         )}

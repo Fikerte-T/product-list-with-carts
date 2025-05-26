@@ -33,7 +33,7 @@ const Cart = ({cartItems, total, setCartItems, products, setProducts}) => {
                         </div>
                     </div>
                     <button onClick={() => removeItem(item.id)}>
-                      <img src="../assets/images/icon-remove-item.svg" alt="remove icon" className='border-1 border-custom-rose300 rounded-full p-0.5'/>
+                      <img src="./assets/images/icon-remove-item.svg" alt="remove icon" className='border-1 border-custom-rose300 rounded-full p-0.5'/>
 
                     </button>
                 </div>
@@ -44,7 +44,7 @@ const Cart = ({cartItems, total, setCartItems, products, setProducts}) => {
                 <p className='text-custom-rose900 font-bold text-3xl'>{`$${total}`}</p>
             </div>
             <div className='flex justify-center bg-custom-rose100 p-4 rounded-lg'>
-                <img src="../assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
+                <img src="./assets/images/icon-carbon-neutral.svg" alt="carbon neutral icon" />
                 <p className='pl-2 text-custom-rose500'>This is a <span className='font-bold'>carbon neutral</span> delivery</p>
             </div>
               {/* Modal toggle */}
@@ -57,7 +57,7 @@ const Cart = ({cartItems, total, setCartItems, products, setProducts}) => {
             
             <Modal open={open} onClose={() => setOpen(false)}>
                 <div className='space-y-2'>
-                    <img src="../assets/images/icon-order-confirmed.svg" alt="order confirmed icon" />
+                    <img src="./assets/images/icon-order-confirmed.svg" alt="order confirmed icon" />
                     <h2 className='text-custom-rose900 text-4xl font-extrabold'>Order Confirmed</h2>
                     <p className='text-custom-rose400 text-sm'>We hope you enjoy your food!</p>
                 </div>       
@@ -93,7 +93,7 @@ const Cart = ({cartItems, total, setCartItems, products, setProducts}) => {
         ) : 
         (
             <>
-            <img src="../assets/images/illustration-empty-cart.svg" alt="empty cart illustation image" className='mx-auto my-6'/>
+            <img src="./assets/images/illustration-empty-cart.svg" alt="empty cart illustation image" className='mx-auto my-6'/>
             <p className='text-custom-rose500 font-semibold text-center'>Your added items will appear here</p>
             </>
         )}
