@@ -53,7 +53,7 @@ function App() {
   }, [cartItems])
   
   useEffect(() => {
-    fetch('./data.json')
+    fetch(`${import.meta.env.BASE_URL}data.json`)
     .then(res => res.json())
     .then(data => {
       const updatedData = data.map(prod => (
