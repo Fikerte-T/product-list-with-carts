@@ -10,7 +10,7 @@ function App() {
   
   const handleToggle = (clickedProd) => {
     setProducts(prevProducts => {
-      const updatedProducts =  prevProducts.map((prod) => prod.id === clickedProd.id ? {...prod, isSelected: true, prodAmount: 1} : prod)  
+      const updatedProducts =  prevProducts.map((prod) => prod.id === clickedProd.id ? {...prod, isSelected: true, prodAmount: 1 } : prod)  
       const updatedProduct = updatedProducts.find(p => p.id === clickedProd.id);
       displayCart(updatedProduct)
       return updatedProducts;  
@@ -57,11 +57,16 @@ function App() {
   useEffect(() => {
     fetch('../data.json')
     .then(res => res.json())
-    .then(data => setProducts(data))
+    .then(data => {
+      const updatedData = data.map(prod => (
+        {...prod, price: (prod.price).toFixed(2) } //Returns a number with 2 decimal digits. Not string
+      ))
+      setProducts(updatedData)
+    })
     
   }, [])
   // console.log(cartItems)
-// console.log(products)
+console.log(products)
   return (
     <main className='bg-custom-rose50 min-h-screen font-primary'>
       <div className='grid grid-cols-1 place-items-center lg:grid-cols-3 lg:place-items-start gap-10 p-20' >
@@ -111,7 +116,7 @@ function App() {
           </div>
         </section>
         <section className='bg-white h-fit rounded-lg px-4 place-self-stretch'>
-          <Cart cartItems = {cartItems} total={total} setCartItems = {setCartItems} products={products} setProducts={setProducts}/>
+          <Cart cartItems = {cartItems} total={total} products={products} setCartItems = {setCartItems} setProducts={setProducts}/>
         </section> 
       </div>
       
