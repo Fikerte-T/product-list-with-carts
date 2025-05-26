@@ -93,7 +93,7 @@ const Cart = ({cartItems, total, setCartItems, products, setProducts}) => {
         ) : 
         (
             <>
-            <img src="/assets/images/illustration-empty-cart.svg" alt="empty cart illustation image" className='mx-auto my-6'/>
+            <img src="./assets/images/illustration-empty-cart.svg" alt="empty cart illustation image" className='mx-auto my-6'/>
             <p className='text-custom-rose500 font-semibold text-center'>Your added items will appear here</p>
             </>
         )}

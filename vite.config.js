@@ -8,6 +8,6 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  base: '/product-list-with-carts'
+  base: '/product-list-with-carts/'
 })
 
