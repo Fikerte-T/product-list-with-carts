@@ -70,7 +70,6 @@ const Cart = ({cartItems, total, setCartItems, products, setProducts}) => {
                                 <div className='flex w-[150px] justify-between '>
                                     <p className='text-custom-red'>{`${item.prodAmount}x`}</p>
                                     <p className='text-custom-rose400 font-normal'>{`@ $${item.price}`}</p>
-                                    {/* <p className='text-custom-rose400'>{`$${item.price * item.prodAmount}`}</p> */}
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,3 @@
-
 import './App.css'
 import {useEffect, useState} from 'react'
 import Cart from './Cart'
@@ -36,7 +35,6 @@ function App() {
   }
 
   const handleDecrement = (id) => {
-
     const updatedProducts = [...products]
     updatedProducts.map(p => p.id === id ? p.prodAmount = Math.max(p.prodAmount - 1, 1) : p.prodAmount)
     setProducts(updatedProducts)
@@ -59,14 +57,12 @@ function App() {
     .then(res => res.json())
     .then(data => {
       const updatedData = data.map(prod => (
-        {...prod, price: (prod.price).toFixed(2) } //Returns a number with 2 decimal digits. Not string
+        {...prod, price: (prod.price).toFixed(2) } // string
       ))
       setProducts(updatedData)
-    })
-    
+    })   
   }, [])
-  // console.log(cartItems)
-console.log(products)
+
   return (
     <main className='bg-custom-rose50 min-h-screen font-primary'>
       <div className='grid grid-cols-1 place-items-center lg:grid-cols-3 lg:place-items-start gap-10 p-20' >
