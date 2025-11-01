@@ -1,12 +1,57 @@
-# React + Vite
+# Frontend Mentor - QR code component solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ This is product list project that includes a functional cart.
+ 
+ Users should be able to:
 
-Currently, two official plugins are available:
+    - Add items to the cart and remove them
+    - Increase/decrease the number of items in the cart
+    - See an order confirmation modal when they click "Confirm Order"
+    - Reset their selections when they click "Start New Order"
+    - Navigate the whole project and perform all actions using only their keyboard
+    - View the optimal layout for the interface depending on their device's screen size
+    - See hover and focus states for all interactive elements on the page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of contents
 
-## Expanding the ESLint configuration
+- [Overview](#overview)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Overview
+
+### Links
+
+- [Solution URL](https://github.com/Fikerte-T/product-list-with-carts)
+- [Live Site URL](https://fikerte-t.github.io/product-list-with-carts/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- React
+- Tailwindcss
+
+### Continued development
+
+
+
+### Useful resources
+
+
+
+## Author
+
+- Website - [Fikerte T](https://fikerte-t.github.io/portfolio/)
+- Frontend Mentor - [@Fikerte-T](https://www.frontendmentor.io/profile/Fikerte-T)
+- LinkedIn - [@Fikerte-T](https://www.linkdedin.com/in/fikerte-tesfaye)
+
+## Acknowledgments
+
+Would like to thank [Frontend Mentor](https://www.frontendmentor.io) for this challenge/project that helped me improve your coding skills.
