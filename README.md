@@ -1,4 +1,4 @@
-# Frontend Mentor - QR code component solution
+# Product list with carts
 
  This is product list project that includes a functional cart.
  
